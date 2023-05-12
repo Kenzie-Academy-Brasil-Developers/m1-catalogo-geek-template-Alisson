@@ -122,7 +122,6 @@ function renderPaintings(list){
 function renderActionFigures(list){
   let listaActionFigures = document.querySelector('#actionfigures'); 
   
-
   for(let i =0; i < list.length; i++) {
       let product = (list[i]);
 
@@ -140,10 +139,10 @@ function renderActionFigures(list){
   
       li.append (img, h2, p);
 
-     
       listaActionFigures.appendChild(li)
            
     }
 }
+
 renderActionFigures(actionFiguresArray);
 renderPaintings(paintingsArray);
