@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100vh;
 }
 img {
     border-radius: 5%;
@@ -19,7 +21,8 @@ img {
 
 
 button:hover  {
-    background-color: hsla(205, 99%, 52%, 0.100) ;
+    background-color: #0A99FE  ;
+    opacity: 90%;
     border-radius: 10%;
 }
 p {
@@ -39,7 +42,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5%;
+    border-top: 10%;
 }
 ul {
     
@@ -55,6 +58,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.055);
-    
+    box-shadow: 3px 3px 10px 3px #DDDDDD;
+    width: 100%;
+    border: none;   
+}
+button {
+    width: 150px;
+    height: 40px;
+    display:block;
+    flex-direction: row;
 }

@@ -84,21 +84,20 @@ let paintingsArray = []
 function separateItens(productsArray){
   for(let i=0; i < productsArray.length; i++ ){
     if (productsArray[i].type ==="Action Figures" )  {
-      actionFiguresArray.push(productsArray)
+      actionFiguresArray.push(productsArray[i])
       } else if (productsArray[i].type === "Paintings"){
-      paintingsArray.push(productsArray)
+      paintingsArray.push(productsArray[i])
     }
   }
 }
 
-function storeProducts(list){
-  let listaPaintings = document.querySelector('#paintings');
-  let listaActionFigures = document.querySelector('#actionfigures'); 
-  
+separateItens(productsArray)
 
+function renderPaintings(list){
+  let listaPaintings = document.querySelector('#paintings');
+  
   for(let i =0; i < list.length; i++) {
       let product = (list[i]);
-      console.log(product)
 
       let li = document.createElement('li');
       let img = document.createElement('img');
@@ -114,18 +113,37 @@ function storeProducts(list){
   
       li.append (img, h2, p);
 
-      if (product.type ==="Action Figures" )  {
-        listaActionFigures.appendChild(li)
-        } else if (product.type === "Paintings"){
-          listaPaintings.appendChild(li)
-      }
-      
-      
-      
-      
-       
+     
+      listaPaintings.appendChild(li)
+           
     }
-
 }
 
-storeProducts(productsArray);
+function renderActionFigures(list){
+  let listaActionFigures = document.querySelector('#actionfigures'); 
+  
+
+  for(let i =0; i < list.length; i++) {
+      let product = (list[i]);
+
+      let li = document.createElement('li');
+      let img = document.createElement('img');
+      let h2 = document.createElement ('h2');
+      let p = document.createElement('p');
+
+      img.src = product.image;
+      img.className = "paitings"
+      img.alt = product.name;
+      h2.innerText = product.name;
+      h2.classList.add("cardTitle")
+      p.innerText = product.price;
+  
+      li.append (img, h2, p);
+
+     
+      listaActionFigures.appendChild(li)
+           
+    }
+}
+renderActionFigures(actionFiguresArray);
+renderPaintings(paintingsArray);
